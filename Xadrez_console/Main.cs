@@ -1,4 +1,5 @@
-﻿using tabuleiro;
+﻿using System;
+using tabuleiro;
 
 namespace Xadrez_console
 {
@@ -6,6 +7,9 @@ namespace Xadrez_console
     {
         static void Main(string[] args) {
             Tabuleiro tab = new Tabuleiro(8, 8);
+            Tela.imprimirTabuleiro(tab);
+            Console.ReadKey();
+
         }
     }
 }

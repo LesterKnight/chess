@@ -1,6 +1,6 @@
-C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\bin\Debug\Xadrez_console.dll
 C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\bin\Debug\Xadrez_console.pdb
 C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\obj\Debug\Xadrez_console.csprojResolveAssemblyReference.cache
 C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\obj\Debug\Xadrez_console.csproj.CoreCompileInputs.cache
-C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\obj\Debug\Xadrez_console.dll
 C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\obj\Debug\Xadrez_console.pdb
+C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\bin\Debug\Xadrez_console.exe
+C:\Users\cmoliveira2\Source\Repos\gitchess\Xadrez_console\chess\Xadrez_console\obj\Debug\Xadrez_console.exe
