@@ -2,15 +2,15 @@
 
 namespace xadrez
 {
-    class Torre : Peca
+    class Peao : Peca
     {
-        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) {
+        public Peao(Tabuleiro tab, Cor cor) : base(tab, cor) {
 
         }
 
         public override string ToString()
         {
-            return "T";
+            return "P";
         }
     }
 }

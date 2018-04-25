@@ -23,7 +23,7 @@
         {
             return pecas[pos.linha, pos.coluna];
         }
-
+        //COLOCA PECA NA POSICAO
         public void colocarPeca(Peca p, Posicao pos)
         {
             if (existePeca(pos)) {
@@ -32,6 +32,17 @@
 
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
+        }
+        //RETIRA PECA DA POSICAO E RETORNA A PECA
+        public Peca retiraPeca(Posicao pos) {
+            if(peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
         }
 
         //VALIDA SE ESTA FORA DOS LIMITES
