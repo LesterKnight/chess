@@ -7,10 +7,27 @@ namespace Xadrez_console
     {
         static void Main(string[] args) {
 
-            
-            PartidaDeXadrez partida = new PartidaDeXadrez();
+            try {
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Console.WriteLine();
+                    Tela.imprimirTabuleiro(partida.tab);
+                    Console.Write("origem:");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    Console.Write("destino");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+                    partida.executaMovimento(origem, destino);
+                }
 
-            Tela.imprimirTabuleiro(partida.tab);
+            }
+            catch (TabuleiroException t) {
+                Console.WriteLine(t.Message);
+            }
+         
+
+            
 
 
 
