@@ -33,14 +33,37 @@ namespace Xadrez_console
         }
 
         public static void imprimirPeca(Peca peca) {
-            if (peca.cor == Cor.Branca)
-                Console.Write(peca);
-            else {//SE A PECA FOR PRETA
-                ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(peca);
-                Console.ForegroundColor = aux;
+            if (peca == null)
+            {
+                Console.Write("- ");
             }
+            else {
+                if (peca.cor == Cor.Branca)
+                    Console.Write(peca);
+                else
+                {//SE A PECA FOR PRETA
+                    ConsoleColor aux = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(peca);
+                    Console.ForegroundColor = aux;
+                }
+            }
+            Console.Write(" ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
         }
     }
 }
