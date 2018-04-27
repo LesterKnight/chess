@@ -21,7 +21,7 @@ namespace xadrez
         public void colocarPecas() {
             //INSTANCIANDO PECAS
             //PRETO
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('a', 4).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('c', 4).toPosicao());
             /* tab.colocarPeca(new Cavalo(tab, Cor.Preta), new PosicaoXadrez('b', 1).toPosicao());
              tab.colocarPeca(new Bispo(tab, Cor.Preta), new PosicaoXadrez('c', 1).toPosicao());
              tab.colocarPeca(new Rainha(tab, Cor.Preta), new PosicaoXadrez('d', 1).toPosicao());

@@ -14,7 +14,6 @@ namespace Xadrez_console
                         Console.Write("- ");
                     else {
                         imprimirPeca(tab.peca(i, j));
-                        Console.Write(" ");
                     }
 
 
@@ -23,6 +22,40 @@ namespace Xadrez_console
             }
             Console.WriteLine("  A B C D E F G H");
         }
+
+        public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
+        {
+            for (int i = 0; i < tab.linhas; i++)
+            {
+                Console.Write(8 - i + " ");
+                for (int j = 0; j < tab.colunas; j++)
+                {
+                    if (tab.peca(i, j) == null)
+                        Console.Write("- ");
+                    else
+                    {
+                        imprimirPeca(tab.peca(i, j));
+                    }
+
+
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("  A B C D E F G H");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public static PosicaoXadrez lerPosicaoXadrez()
         {
