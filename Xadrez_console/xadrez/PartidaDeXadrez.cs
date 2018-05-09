@@ -22,7 +22,11 @@ namespace xadrez
             //INSTANCIANDO PECAS
             //PRETO
             tab.colocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('c', 4).toPosicao());
-            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('c', 6).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('b', 2).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('b', 1).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('a', 3).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('a', 2).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('a', 1).toPosicao());
             /* tab.colocarPeca(new Cavalo(tab, Cor.Preta), new PosicaoXadrez('b', 1).toPosicao());
              tab.colocarPeca(new Bispo(tab, Cor.Preta), new PosicaoXadrez('c', 1).toPosicao());
              tab.colocarPeca(new Rainha(tab, Cor.Preta), new PosicaoXadrez('d', 1).toPosicao());
@@ -83,6 +87,19 @@ namespace xadrez
             else
                 jogadorAtual = Cor.Branca;
         }
+
+        public void validarPosicaoDeOrigem(Posicao pos) {
+            if (tab.peca(pos) == null)
+                throw new TabuleiroException("Não existe peça na posição de origem escolhida");
+
+            if (jogadorAtual != tab.peca(pos).cor)
+                throw new TabuleiroException("peça não pertence ao jogador");
+
+            if(!tab.peca(pos).existeMovimentosPossiveis())
+                throw new TabuleiroException("Não existem movimentos possiveis para essa peça");
+        }
+
+
 
     }
 }
