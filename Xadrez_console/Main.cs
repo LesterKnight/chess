@@ -22,6 +22,10 @@ namespace Xadrez_console
 
 
                     bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Console.WriteLine();
+
                     Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
 

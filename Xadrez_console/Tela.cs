@@ -25,11 +25,21 @@ namespace Xadrez_console
 
         public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
         {
+
+            ConsoleColor fundoOriginal = Console.BackgroundColor;
+            ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
+
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
+                    if (posicoesPossiveis[i, j])
+                        Console.BackgroundColor = fundoAlterado;
+                    else
+                        Console.BackgroundColor = fundoOriginal;
+
+
                     if (tab.peca(i, j) == null)
                         Console.Write("- ");
                     else
@@ -39,9 +49,12 @@ namespace Xadrez_console
 
 
                 }
+                Console.BackgroundColor = fundoOriginal;
                 Console.WriteLine();
             }
+            //Console.BackgroundColor = fundoOriginal;
             Console.WriteLine("  A B C D E F G H");
+            
         }
 
 
