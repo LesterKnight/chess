@@ -16,10 +16,8 @@ namespace Xadrez_console
                     {
                         Console.Clear();
                         Console.WriteLine();
-                        Tela.imprimirTabuleiro(partida.tab);    
-                        Console.WriteLine();
-                        Console.WriteLine("turno " + partida.turno);
-                        Console.WriteLine("aguardando jogador " + partida.jogadorAtual);
+                        Tela.imprimirPartida(partida);
+
 
                         Console.Write("origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
