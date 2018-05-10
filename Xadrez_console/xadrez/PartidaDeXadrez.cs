@@ -99,6 +99,12 @@ namespace xadrez
                 throw new TabuleiroException("Não existem movimentos possiveis para essa peça");
         }
 
+        public void validarPosicaoDeDestino(Posicao origem, Posicao destino) {
+            if (!tab.peca(origem).podeMoverPara(destino)) {
+                throw new TabuleiroException("Posicao de destino invalida");
+            }
+        }
+
 
 
     }
