@@ -16,6 +16,12 @@
         public void incrementarMovimentos() {
             this.qteMovimentos++;
         }
+
+        public void decrementarMovimentos()
+        {
+            this.qteMovimentos--;
+        }
+
         public abstract bool[,] movimentosPossiveis();
 
 
