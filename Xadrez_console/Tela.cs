@@ -32,9 +32,18 @@ namespace Xadrez_console
 
             Console.WriteLine();
             Console.WriteLine("turno " + partida.turno);
-            Console.WriteLine("aguardando jogador " + partida.jogadorAtual);
-            if (partida.xeque)
-                Console.WriteLine("XEQUE!");
+            if (!partida.terminada)
+            {
+                Console.WriteLine("aguardando jogador " + partida.jogadorAtual);
+                if (partida.xeque)
+                    Console.WriteLine("XEQUE!");
+            }
+            else {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("");
+            }
+
+
 
         }
 
@@ -92,18 +101,6 @@ namespace Xadrez_console
             Console.WriteLine("  A B C D E F G H");
             
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         public static PosicaoXadrez lerPosicaoXadrez()

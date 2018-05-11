@@ -58,11 +58,12 @@ namespace xadrez
         public void colocarPecas() {
             //INSTANCIANDO PECAS
             //PRETO
-            colocarNovaPeca('a', 2, new Rei(tab, Cor.Preta));
-            colocarNovaPeca('c', 4, new Rei(tab, Cor.Branca));
+            colocarNovaPeca('a', 8, new Rei(tab, Cor.Preta));
 
-            colocarNovaPeca('e', 8, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('f', 8, new Torre(tab, Cor.Preta));
+            colocarNovaPeca('c', 4, new Rei(tab, Cor.Branca));
+            colocarNovaPeca('d', 2, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('b', 1, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('f', 7, new Torre(tab, Cor.Branca));
 
         }
 
@@ -105,9 +106,13 @@ namespace xadrez
             else
                 xeque = false;
 
-            turno++;
-            mudaJogador();
-
+            if (testaXequeMate(adversaria(jogadorAtual))) {
+                terminada = true;
+            }
+            else {
+                turno++;
+                mudaJogador();
+            }
         }
 
         private void mudaJogador() {
@@ -160,6 +165,29 @@ namespace xadrez
                     return true;
             }
             return false;
+        }
+
+        public bool testaXequeMate(Cor cor) {
+            if (!estaEmXeque(cor))
+                return false;
+            foreach (Peca x in pecasEmJogo(cor)) {
+                bool[,] mat = x.movimentosPossiveis();
+                for (int i = 0; i < tab.linhas; i++) {
+                    for (int j = 0; j < tab.colunas; j++) {
+                        if (mat[i, j]) {
+                            Posicao origem = x.posicao;
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecaCapturada = executaMovimento(x.posicao, destino);
+                            bool testeXeque = estaEmXeque(cor);
+                            desfazMovimento(origem, destino, pecaCapturada);
+                            if (!testeXeque) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
         }
     }
 }
