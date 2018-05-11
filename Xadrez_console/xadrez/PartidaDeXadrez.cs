@@ -37,10 +37,9 @@ namespace xadrez
 
 
 
-        public HashSet<Peca> pecasEmJogo(Cor cor)
-        {
+        public HashSet<Peca> pecasEmJogo(Cor cor) {
             HashSet<Peca> aux = new HashSet<Peca>();
-            foreach (Peca x in capturadas)
+            foreach (Peca x in pecas)
             {
                 if (x.cor == cor)
                     aux.Add(x);
@@ -53,16 +52,18 @@ namespace xadrez
 
         public void colocarNovaPeca(char coluna, int linha,Peca peca) {
             tab.colocarPeca(peca, new PosicaoXadrez(coluna, linha).toPosicao());
+            pecas.Add(peca);
         }
 
         public void colocarPecas() {
             //INSTANCIANDO PECAS
             //PRETO
-            colocarNovaPeca('c', 3, new Torre(tab, Cor.Preta));
-            colocarNovaPeca('c', 4, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('c', 5, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('c', 6, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('c', 7, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('a', 2, new Rei(tab, Cor.Preta));
+            colocarNovaPeca('b', 3, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('c', 4, new Rei(tab, Cor.Branca));
+            colocarNovaPeca('d', 5, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('e', 6, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('f', 7, new Torre(tab, Cor.Preta));
 
         }
 
