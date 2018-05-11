@@ -4,8 +4,7 @@ namespace xadrez
 {
     class Torre : Peca
     {
-        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
-        {
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) {
 
         }
 
@@ -18,7 +17,6 @@ namespace xadrez
         private bool podeMover(Posicao pos)
         {
             Peca p = tab.peca(pos);
-
             return p == null || p.cor != this.cor;
         }
 

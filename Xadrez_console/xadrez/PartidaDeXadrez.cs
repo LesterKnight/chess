@@ -59,11 +59,10 @@ namespace xadrez
             //INSTANCIANDO PECAS
             //PRETO
             colocarNovaPeca('a', 2, new Rei(tab, Cor.Preta));
-            colocarNovaPeca('b', 3, new Torre(tab, Cor.Branca));
             colocarNovaPeca('c', 4, new Rei(tab, Cor.Branca));
-            colocarNovaPeca('d', 5, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('e', 6, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('f', 7, new Torre(tab, Cor.Preta));
+
+            colocarNovaPeca('e', 8, new Torre(tab, Cor.Branca));
+            colocarNovaPeca('f', 8, new Torre(tab, Cor.Preta));
 
         }
 
@@ -98,8 +97,6 @@ namespace xadrez
                 throw new TabuleiroException("voce nao pode se colocar em xeque");
             }
 
-            turno++;
-            mudaJogador();
 
             if (estaEmXeque(adversaria(jogadorAtual)))
             {
@@ -107,6 +104,10 @@ namespace xadrez
             }
             else
                 xeque = false;
+
+            turno++;
+            mudaJogador();
+
         }
 
         private void mudaJogador() {
@@ -152,7 +153,7 @@ namespace xadrez
         public bool estaEmXeque(Cor cor) {
             Peca R = rei(cor);
             if (R == null)
-                throw new TabuleiroException("não tem rei");
+                throw new TabuleiroException("NAO EXISTE REI DA COR "+cor+"!");
             foreach (Peca x in pecasEmJogo(adversaria(cor))) {
                 bool[,] mat = x.movimentosPossiveis();
                 if (mat[R.posicao.linha, R.posicao.coluna])
