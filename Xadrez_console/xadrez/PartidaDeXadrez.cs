@@ -59,11 +59,9 @@ namespace xadrez
             //INSTANCIANDO PECAS
             //PRETO
             colocarNovaPeca('a', 8, new Rei(tab, Cor.Preta));
+            colocarNovaPeca('f', 8, new Rei(tab, Cor.Branca));
+            colocarNovaPeca('d', 4, new Cavalo(tab, Cor.Branca));
 
-            colocarNovaPeca('c', 4, new Rei(tab, Cor.Branca));
-            colocarNovaPeca('d', 2, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('b', 1, new Torre(tab, Cor.Branca));
-            colocarNovaPeca('f', 7, new Torre(tab, Cor.Branca));
 
         }
 
