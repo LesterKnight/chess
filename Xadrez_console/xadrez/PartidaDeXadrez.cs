@@ -60,8 +60,8 @@ namespace xadrez
             //PRETO
             colocarNovaPeca('a', 8, new Rei(tab, Cor.Preta));
             colocarNovaPeca('f', 8, new Rei(tab, Cor.Branca));
-            colocarNovaPeca('d', 4, new Cavalo(tab, Cor.Branca));
-
+            colocarNovaPeca('f', 7, new Peao(tab, Cor.Preta));
+            colocarNovaPeca('e', 2, new Peao(tab, Cor.Branca));
 
         }
 
