@@ -73,6 +73,26 @@ namespace xadrez
             tab.colocarPeca(p, destino);
             if (pecaCapturada != null)
                 capturadas.Add(pecaCapturada);
+
+            //JOGADA ESPECIAL
+            //ROQUE PEQUENO
+            if (p is Rei && destino.coluna == origem.coluna + 2) {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna + 1);
+                Peca T = tab.retiraPeca(origemT);
+                T.incrementarMovimentos();
+                tab.colocarPeca(T, destinoT);
+            }
+            //ROQUE GRANDE
+            if (p is Rei && destino.coluna == origem.coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna -4);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna -1);
+                Peca T = tab.retiraPeca(origemT);
+                T.incrementarMovimentos();
+                tab.colocarPeca(T, destinoT);
+            }
+
             return pecaCapturada;
         }
 
@@ -84,6 +104,24 @@ namespace xadrez
                 capturadas.Remove(pecaCapturada);
             }
             tab.colocarPeca(p, origem);
+
+            if (p is Rei && destino.coluna == origem.coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna + 1);
+                Peca T = tab.retiraPeca(destinoT);
+                T.decrementarMovimentos();
+                tab.colocarPeca(T, origemT);
+            }
+
+            if (p is Rei && destino.coluna == origem.coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna -4);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna -1);
+                Peca T = tab.retiraPeca(destinoT);
+                T.decrementarMovimentos();
+                tab.colocarPeca(T, origemT);
+            }
 
 
         }
