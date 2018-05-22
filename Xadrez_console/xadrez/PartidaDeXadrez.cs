@@ -58,10 +58,10 @@ namespace xadrez
         public void colocarPecas() {
             //INSTANCIANDO PECAS
             //PRETO
-            colocarNovaPeca('a', 8, new Rei(tab, Cor.Preta));
-            colocarNovaPeca('f', 8, new Rei(tab, Cor.Branca));
-            colocarNovaPeca('f', 7, new Peao(tab, Cor.Preta));
-            colocarNovaPeca('e', 2, new Peao(tab, Cor.Branca));
+
+            colocarNovaPeca('f', 7, new Rei(tab, Cor.Preta, this));
+            colocarNovaPeca('e', 1, new Rei(tab, Cor.Branca, this));
+            colocarNovaPeca('h', 1, new Torre(tab, Cor.Branca));
 
         }
 
